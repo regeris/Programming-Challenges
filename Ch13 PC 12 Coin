@@ -1,0 +1,36 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include "Coin.h"
+
+using namespace std;
+
+
+int main(){
+
+srand(static_cast<unsigned int>(time(0)));
+
+int headsCounter = 0, tailsCounter = 0;
+
+Coin flips;
+
+for(int i = 0; i < 20; i++){
+
+    flips.toss();
+    cout << flips.getSideUp() << endl;
+
+if(flips.getSideUp() == "heads"){
+headsCounter++;
+}
+else if(flips.getSideUp() == "tails")
+{
+    tailsCounter++;
+}
+
+}
+
+cout << "Heads landed " << headsCounter << " times." << endl;
+cout << "Tails landed " << tailsCounter << " times." << endl;
+
+return 0;
+}
